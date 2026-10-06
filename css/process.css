@@ -1,0 +1,130 @@
+/*==========mobile==========*/
+.process {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 5rem 1rem 4rem 1rem;
+  border-top: 1px solid var(--border-color);
+}
+.process > * {
+  width: 100%;
+  max-width: var(--container-width);
+  margin-inline: auto;
+}
+.process-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.process-copy {
+  display: flex;
+  flex-direction: column;
+}
+/* no celular os passos viram uma linha do tempo vertical */
+.process-cards {
+  display: flex;
+  flex-direction: column;
+}
+.process-cards-item {
+  display: flex;
+  gap: 1.25rem;
+  position: relative;
+  padding-bottom: 2rem;
+}
+.process-cards-item:last-child {
+  padding-bottom: 0;
+}
+/* linha que liga um círculo ao próximo (centro do círculo de 52px = 26px) */
+.process-cards-item:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  top: 52px;
+  bottom: 0;
+  left: 26px;
+  width: 1px;
+  background-color: var(--primary-hover);
+  opacity: 0.5;
+}
+.process-cards-item.reveal:nth-child(1) {
+  transition-delay: 0s;
+}
+.process-cards-item.reveal:nth-child(2) {
+  transition-delay: 0.15s;
+}
+.process-cards-item.reveal:nth-child(3) {
+  transition-delay: 0.3s;
+}
+.process-cards-item.reveal:nth-child(4) {
+  transition-delay: 0.45s;
+}
+.process-cards-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border: 1px solid var(--primary-color);
+  border-radius: 50%;
+  background-color: var(--background-color);
+  font-family: var(--ftitle);
+  font-size: var(--fs-header-tablet);
+  font-weight: var(--title-weight);
+  color: var(--primary-color);
+}
+.process-cards-item-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 0.7rem;
+}
+.process-cards-item-title {
+  font-family: var(--ftitle);
+  font-size: var(--fs-header-tablet);
+  font-weight: var(--menu-text-weight);
+  color: var(--title-color);
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+.process-cards-item-text {
+  font-size: var(--fs-detail);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+/*==========tablet==========*/
+@media screen and (min-width: 768px) {
+  .process {
+    padding: 6rem 2rem 5rem 2rem;
+  }
+  .process-cards-item-copy {
+    max-width: 520px;
+  }
+}
+/*==========desktop==========*/
+/* no desktop os passos ficam lado a lado, como na referência */
+@media screen and (min-width: 1024px) {
+  .process-cards {
+    flex-direction: row;
+  }
+  .process-cards-item {
+    flex: 1;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 1.5rem 0 0;
+  }
+  .process-cards-item:last-child {
+    padding-right: 0;
+  }
+  /* a linha vira horizontal e vai do círculo até o início do próximo passo */
+  .process-cards-item:not(:last-child)::before {
+    top: 26px;
+    right: 0;
+    bottom: auto;
+    left: 52px;
+    width: auto;
+    height: 1px;
+  }
+  .process-cards-item-copy {
+    padding-top: 0;
+  }
+}

@@ -1,0 +1,176 @@
+/*==========mobile==========*/
+.header {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: var(--header-height);
+  padding: 0 1rem;
+  border-bottom: 1px solid var(--glass-border-color);
+}
+/* vidro fosco num ::before: backdrop-filter no próprio header prenderia o menu
+   de tela cheia (position: fixed) dentro dos 80px do header */
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--glass-header-color);
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  backdrop-filter: blur(var(--glass-blur));
+}
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: var(--container-width);
+  margin-inline: auto;
+}
+.logo {
+  display: flex;
+}
+.logo-img {
+  width: 9.5rem;
+}
+.navigation {
+  display: flex;
+  align-items: center;
+}
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 24px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.menu-toggle .bar {
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition:
+    transform 0.3s,
+    opacity 0.3s;
+}
+/* barrinhas viram um X quando o menu abre (.aberto vem do menu.js) */
+.navigation.aberto .menu-toggle .bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.navigation.aberto .menu-toggle .bar:nth-child(2) {
+  opacity: 0;
+}
+.navigation.aberto .menu-toggle .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+/* menu aberto cobre a tela toda abaixo do header, que continua visível para fechar no X */
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  position: fixed;
+  top: var(--header-height);
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: var(--background-color);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+  transform: translateY(-8px);
+}
+.navigation.aberto .navbar {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+/* trava a rolagem da página enquanto o menu está aberto (.menu-aberto vem do menu.js) */
+body.menu-aberto {
+  overflow: hidden;
+}
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+.nav-link {
+  font-family: var(--ftitle);
+  font-size: var(--fs-header-desktop);
+  font-weight: var(--menu-text-weight);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: all 0.3s;
+}
+.nav-link:hover {
+  color: var(--primary-color);
+}
+/* classe adicionada pelo active-link.js no link da seção que está na tela */
+.nav-link.ativo {
+  color: var(--primary-color);
+}
+.nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  margin: 0.35rem auto 0 auto;
+  background-color: var(--primary-color);
+  transition: all 0.3s;
+}
+.nav-link.ativo::after {
+  width: 100%;
+}
+/*==========tablet==========*/
+@media screen and (min-width: 768px) {
+  .header {
+    padding: 0 2rem;
+  }
+  .logo-img {
+    width: 11rem;
+  }
+}
+/*==========desktop==========*/
+@media screen and (min-width: 1024px) {
+  .menu-toggle {
+    display: none;
+  }
+  .navbar {
+    flex-direction: row;
+    gap: 3rem;
+    position: static;
+    padding: 0;
+    background-color: transparent;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+  }
+  .nav-list {
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .nav-link {
+    font-family: var(--ftexts);
+    font-size: var(--fs-sm);
+    letter-spacing: 0.12em;
+  }
+  .nav-button {
+    padding: 0.7rem 1.5rem;
+    font-size: var(--fs-detail);
+  }
+  /* se o menu ficou aberto ao aumentar a tela, a página volta a rolar */
+  body.menu-aberto {
+    overflow: visible;
+  }
+}

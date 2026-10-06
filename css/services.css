@@ -1,0 +1,151 @@
+/*==========mobile==========*/
+.services {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 1rem 4rem 1rem;
+  border-top: 1px solid var(--border-color);
+  background-color: var(--background-color);
+  /* foto da academia escurecida atrás da seção: o texto fica no escuro de cima
+     e os cards de vidro borram a foto, que aparece mais embaixo */
+  background-image:
+    linear-gradient(
+      180deg,
+      var(--overlay-color),
+      var(--overlay-medium-color) 45%,
+      var(--overlay-medium-color)
+    ),
+    url("../assets/bg-services.webp");
+  /* 75% mantém a aluna, que está à direita na foto, dentro da tela do celular */
+  background-position: 75% center;
+  background-size: cover;
+}
+.services-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  width: 100%;
+  max-width: var(--container-width);
+  margin-inline: auto;
+}
+.services-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+.services-text {
+  font-size: var(--fs-base);
+  color: var(--text-color);
+  line-height: 1.7;
+}
+.services-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+.services-cards-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.75rem 1rem;
+  border: 1px solid var(--glass-border-color);
+  border-radius: 0.75rem;
+  background-color: var(--glass-color);
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  backdrop-filter: blur(var(--glass-blur));
+  text-align: center;
+  /* entrada (opacity/transform) e hover (borda, fundo, scale) com transições separadas,
+     para o atraso escalonado da entrada não atrasar o hover */
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease,
+    -webkit-backdrop-filter 0.6s ease,
+    backdrop-filter 0.6s ease,
+    border-color 0.3s,
+    background-color 0.3s,
+    scale 0.3s;
+}
+.services-cards-item:hover {
+  border-color: var(--primary-color);
+  background-color: var(--glass-hover-color);
+  scale: 1.03;
+}
+/* enquanto o card está escondido o vidro fica sem desfoque: o Chrome às vezes desenha
+   o backdrop-filter de um elemento com opacidade 0, sem borda e sem cantos arredondados */
+.services-cards-item.reveal:not(.visivel) {
+  -webkit-backdrop-filter: blur(0);
+  backdrop-filter: blur(0);
+}
+/* atraso só nas quatro primeiras propriedades (as da entrada) */
+.services-cards-item.reveal:nth-child(1) {
+  transition-delay: 0s;
+}
+.services-cards-item.reveal:nth-child(2) {
+  transition-delay: 0.15s, 0.15s, 0.15s, 0.15s, 0s, 0s, 0s;
+}
+.services-cards-item.reveal:nth-child(3) {
+  transition-delay: 0.3s, 0.3s, 0.3s, 0.3s, 0s, 0s, 0s;
+}
+.services-cards-item.reveal:nth-child(4) {
+  transition-delay: 0.45s, 0.45s, 0.45s, 0.45s, 0s, 0s, 0s;
+}
+.services-cards-img {
+  width: 40px;
+  height: 40px;
+  color: var(--icons-color);
+}
+.services-cards-item-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.services-cards-item-title {
+  font-family: var(--ftitle);
+  font-size: var(--fs-base);
+  font-weight: var(--menu-text-weight);
+  color: var(--title-color);
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+.services-cards-item-text {
+  font-size: var(--fs-card);
+  color: var(--text-color);
+  line-height: 1.5;
+}
+/*==========tablet==========*/
+@media screen and (min-width: 768px) {
+  .services {
+    padding: 6rem 2rem 5rem 2rem;
+  }
+  .services-cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+/*==========desktop==========*/
+@media screen and (min-width: 1024px) {
+  /* no desktop o texto fica no lado escuro da esquerda e a aluna aparece atrás dos cards */
+  .services {
+    background-image:
+      linear-gradient(
+        90deg,
+        var(--background-color) 20%,
+        var(--overlay-medium-color) 50%,
+        var(--overlay-soft-color)
+      ),
+      url("../assets/bg-services.webp");
+    /* 25% na vertical: a seção é baixa e, centralizada, a foto cortava o rosto da aluna */
+    background-position: right 25%;
+  }
+  .services-content {
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+  }
+  .services-copy {
+    flex: 0 0 340px;
+  }
+  .services-cards {
+    flex: 1;
+  }
+}

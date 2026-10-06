@@ -1,0 +1,139 @@
+/*==========mobile==========*/
+.contact {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 1rem 4rem 1rem;
+  border-top: 1px solid var(--border-color);
+  /* brilho dourado atrás do formulário: sem ele o vidro some sobre o fundo liso */
+  background-image: radial-gradient(
+    circle at 70% 60%,
+    var(--glow-color),
+    transparent 55%
+  );
+}
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: var(--container-width);
+  margin-inline: auto;
+}
+.contact-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.contact-text {
+  font-size: var(--fs-base);
+  color: var(--text-color);
+  line-height: 1.7;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 1px solid var(--glass-border-color);
+  border-radius: 0.75rem;
+  background-color: var(--glass-color);
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  backdrop-filter: blur(var(--glass-blur));
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease,
+    -webkit-backdrop-filter 0.6s ease,
+    backdrop-filter 0.6s ease;
+}
+/* enquanto o formulário está escondido o vidro fica sem desfoque: o Chrome às vezes
+   desenha o backdrop-filter de um elemento com opacidade 0, sem borda e sem cantos */
+.form.reveal:not(.visivel) {
+  -webkit-backdrop-filter: blur(0);
+  backdrop-filter: blur(0);
+}
+/* campo armadilha contra robôs: existe no HTML mas fica fora da tela */
+.form-trap {
+  position: absolute;
+  left: -9999px;
+}
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.form-label {
+  font-size: var(--fs-detail);
+  font-weight: var(--menu-text-weight);
+  color: var(--title-color);
+}
+.form-input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  background-color: var(--inputs-color);
+  font-family: var(--ftexts);
+  font-size: var(--fs-base);
+  color: var(--title-color);
+  transition: all 0.3s;
+}
+.form-input::placeholder {
+  color: var(--text-color);
+  opacity: 0.6;
+}
+.form-input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+.form-textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+.form-button {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+.form-button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+  transform: none;
+}
+.form-status {
+  font-size: var(--fs-detail);
+  color: var(--primary-color);
+  text-align: center;
+}
+.form-status:empty {
+  display: none;
+}
+/*==========tablet==========*/
+@media screen and (min-width: 768px) {
+  .contact {
+    padding: 6rem 2rem 5rem 2rem;
+  }
+  .form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem;
+  }
+  /* mensagem, botão e aviso ocupam as duas colunas */
+  .form-field:has(.form-textarea),
+  .form-button,
+  .form-status {
+    grid-column: 1 / -1;
+  }
+}
+/*==========desktop==========*/
+@media screen and (min-width: 1024px) {
+  .contact-content {
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
+  }
+  .contact-copy {
+    flex: 0 0 360px;
+  }
+  .form {
+    flex: 1;
+  }
+}

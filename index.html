@@ -1,0 +1,931 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Márcio Carvalho, personal trainer: treinos personalizados, acompanhamento de perto e um método direto ao ponto para você conquistar mais saúde, força e performance."
+    />
+    <meta name="theme-color" content="#07090d" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content="MC Personal Consultoria" />
+    <meta
+      property="og:description"
+      content="Treinos personalizados, acompanhamento de perto e um método direto ao ponto para você conquistar mais saúde, força e performance."
+    />
+    <link rel="icon" href="assets/favicon.png" />
+    <!-- a foto do hero está no CSS e só seria achada depois da cadeia de @import; o preload antecipa -->
+    <link
+      rel="preload"
+      href="assets/hero.webp"
+      as="image"
+      type="image/webp"
+      fetchpriority="high"
+    />
+    <!-- abre a conexão com o Google Fonts antes de o global.css pedir as fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>MC Personal Consultoria | Márcio Carvalho</title>
+  </head>
+  <body>
+    <!-- ícones reaproveitados na página com <use href="#icon-..." /> -->
+    <svg class="icons" hidden>
+      <symbol id="icon-whatsapp" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 0 0-3.48-8.41Z"
+        />
+      </symbol>
+      <symbol id="icon-arrow" viewBox="0 0 24 24">
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M5 12h14" />
+          <path d="m12 5 7 7-7 7" />
+        </g>
+      </symbol>
+      <symbol id="icon-dumbbell" viewBox="0 0 24 24">
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M14.4 14.4 9.6 9.6" />
+          <path
+            d="M18.66 21.49a2 2 0 1 1-2.83-2.83l-1.77 1.77a2 2 0 1 1-2.83-2.83l6.37-6.36a2 2 0 1 1 2.83 2.83l-1.77 1.77a2 2 0 1 1 2.83 2.83z"
+          />
+          <path d="m21.5 21.5-1.4-1.4" />
+          <path d="M3.9 3.9 2.5 2.5" />
+          <path
+            d="M6.4 12.77a2 2 0 1 1-2.83-2.83l1.77-1.77a2 2 0 1 1-2.83-2.83l2.83-2.83a2 2 0 1 1 2.83 2.83l1.77-1.77a2 2 0 1 1 2.83 2.83z"
+          />
+        </g>
+      </symbol>
+      <symbol id="icon-clipboard" viewBox="0 0 24 24">
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect width="8" height="4" x="8" y="2" rx="1" />
+          <path
+            d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"
+          />
+          <path d="M12 11h4" />
+          <path d="M12 16h4" />
+          <path d="M8 11h.01" />
+          <path d="M8 16h.01" />
+        </g>
+      </symbol>
+      <symbol id="icon-trophy" viewBox="0 0 24 24">
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+          <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+          <path d="M4 22h16" />
+          <path
+            d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"
+          />
+          <path
+            d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"
+          />
+          <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+        </g>
+      </symbol>
+      <symbol id="icon-shield" viewBox="0 0 24 24">
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+          />
+          <path d="m9 12 2 2 4-4" />
+        </g>
+      </symbol>
+      <symbol id="icon-user" viewBox="0 0 24 24">
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+          <circle cx="12" cy="7" r="4" />
+        </g>
+      </symbol>
+      <symbol id="icon-target" viewBox="0 0 24 24">
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="12" cy="12" r="10" />
+          <circle cx="12" cy="12" r="6" />
+          <circle cx="12" cy="12" r="2" />
+        </g>
+      </symbol>
+      <symbol id="icon-heart" viewBox="0 0 24 24">
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
+          />
+          <path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27" />
+        </g>
+      </symbol>
+      <symbol id="icon-activity" viewBox="0 0 24 24">
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"
+          />
+        </g>
+      </symbol>
+      <symbol id="icon-smile" viewBox="0 0 24 24">
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="12" cy="12" r="10" />
+          <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+          <path d="M9 9h.01" />
+          <path d="M15 9h.01" />
+        </g>
+      </symbol>
+      <symbol id="icon-star" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M11.53 2.3a.53.53 0 0 1 .94 0l2.31 4.68a2.12 2.12 0 0 0 1.6 1.16l5.16.76a.53.53 0 0 1 .3.9l-3.74 3.64a2.12 2.12 0 0 0-.61 1.88l.88 5.14a.53.53 0 0 1-.77.56l-4.62-2.43a2.12 2.12 0 0 0-1.97 0L6.4 21.01a.53.53 0 0 1-.77-.56l.88-5.14a2.12 2.12 0 0 0-.61-1.88L2.16 9.8a.53.53 0 0 1 .3-.91l5.16-.75a2.12 2.12 0 0 0 1.6-1.16z"
+        />
+      </symbol>
+      <symbol id="icon-pin" viewBox="0 0 24 24">
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"
+          />
+          <circle cx="12" cy="10" r="3" />
+        </g>
+      </symbol>
+      <symbol id="icon-instagram" viewBox="0 0 24 24">
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect width="20" height="20" x="2" y="2" rx="5" />
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+          <path d="M17.5 6.5h.01" />
+        </g>
+      </symbol>
+      <symbol id="icon-mail" viewBox="0 0 24 24">
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect width="20" height="16" x="2" y="4" rx="2" />
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+        </g>
+      </symbol>
+    </svg>
+    <header class="header">
+      <div class="header-content">
+        <a class="logo" href="#inicio" aria-label="Voltar ao início">
+          <img
+            class="logo-img"
+            src="assets/logo.webp"
+            alt="Logo da MC Personal Consultoria"
+            width="480"
+            height="75"
+          />
+        </a>
+        <div class="navigation">
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="menu-principal"
+          >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+          <nav class="navbar" id="menu-principal">
+            <ul class="nav-list">
+              <li><a class="nav-link ativo" href="#inicio">Home</a></li>
+              <li><a class="nav-link" href="#servicos">Serviços</a></li>
+              <li><a class="nav-link" href="#contato">Contato</a></li>
+            </ul>
+            <a
+              class="primary-button nav-button"
+              href="https://wa.me/556181482244?text=Olá!%20Vim%20pelo%20site%20e%20quero%20começar."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg class="button-icon" aria-hidden="true">
+                <use href="#icon-whatsapp" />
+              </svg>
+              Fale conosco
+            </a>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero-content">
+          <div class="hero-copy">
+            <p class="hero-tagline">Disciplina / Foco / Resultados</p>
+            <h1 class="hero-title">
+              Seu progresso começa com o
+              <span class="destaque">primeiro passo.</span>
+            </h1>
+            <p class="hero-text">
+              Treinos personalizados, acompanhamento de perto e um método direto
+              ao ponto para você conquistar mais saúde, força e performance.
+            </p>
+            <a
+              class="primary-button"
+              href="https://wa.me/556181482244?text=Olá!%20Vim%20pelo%20site%20e%20quero%20começar."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg class="button-icon" aria-hidden="true">
+                <use href="#icon-whatsapp" />
+              </svg>
+              Quero começar agora
+              <svg class="button-icon" aria-hidden="true">
+                <use href="#icon-arrow" />
+              </svg>
+            </a>
+            <div class="hero-cards">
+              <div class="hero-cards-item reveal">
+                <svg class="hero-cards-img" aria-hidden="true">
+                  <use href="#icon-dumbbell" />
+                </svg>
+                <h3 class="hero-cards-item-title">Treinos personalizados</h3>
+              </div>
+              <div class="hero-cards-item reveal">
+                <svg class="hero-cards-img" aria-hidden="true">
+                  <use href="#icon-clipboard" />
+                </svg>
+                <h3 class="hero-cards-item-title">Acompanhamento constante</h3>
+              </div>
+              <div class="hero-cards-item reveal">
+                <svg class="hero-cards-img" aria-hidden="true">
+                  <use href="#icon-trophy" />
+                </svg>
+                <h3 class="hero-cards-item-title">Resultados reais</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="about" id="sobre">
+        <h2 class="section-title">SOBRE MIM</h2>
+        <h3 class="section-headline about-headline">
+          Disciplina é o que te leva
+          <span class="destaque">mais longe.</span>
+        </h3>
+        <div class="about-content">
+          <figure class="about-figure reveal reveal-left">
+            <img
+              class="about-img"
+              src="assets/profile.webp"
+              alt="Márcio Carvalho sorrindo, de boné MC, na academia"
+              width="640"
+              height="640"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <div class="about-copy reveal">
+            <p class="about-text">
+              Sou personal trainer e trabalho com foco em resultados reais,
+              unindo treino, técnica e acompanhamento próximo. Meu objetivo é te
+              ajudar a construir uma versão mais forte, saudável e confiante de
+              você, seja qual for o seu nível.
+            </p>
+            <p class="about-text">
+              Sou <span class="destaque">Márcio Carvalho</span>, Bacharel em
+              Educação Física, Pós-Graduado em Medicina do Esporte e Atividade
+              Física, Especialista em Treinamento Funcional para Saúde e
+              Condicionamento e Pós-Graduado em Alta Performance em Prescrição
+              de Treinos e Exercícios - Hipertrofia, Saúde e Emagrecimento.
+            </p>
+            <div class="about-cards">
+              <div class="about-cards-item reveal">
+                <svg class="about-cards-img" aria-hidden="true">
+                  <use href="#icon-shield" />
+                </svg>
+                <h4 class="about-cards-item-title">Experiência e técnica</h4>
+              </div>
+              <div class="about-cards-item reveal">
+                <svg class="about-cards-img" aria-hidden="true">
+                  <use href="#icon-user" />
+                </svg>
+                <h4 class="about-cards-item-title">
+                  Atendimento individualizado
+                </h4>
+              </div>
+              <div class="about-cards-item reveal">
+                <svg class="about-cards-img" aria-hidden="true">
+                  <use href="#icon-target" />
+                </svg>
+                <h4 class="about-cards-item-title">Foco nos seus objetivos</h4>
+              </div>
+            </div>
+          </div>
+          <blockquote class="about-quote reveal reveal-right">
+            <p class="about-quote-text">
+              “Não existe atalho. Existe trabalho, constância e o apoio certo.”
+            </p>
+            <cite class="about-quote-author">— MC</cite>
+          </blockquote>
+        </div>
+      </section>
+      <section class="services" id="servicos">
+        <div class="services-content">
+          <div class="services-copy reveal">
+            <h2 class="section-title">MEUS SERVIÇOS</h2>
+            <h3 class="section-headline">
+              Treinamento <span class="destaque">personalizado</span>
+            </h3>
+            <p class="services-text">
+              Cada treino é planejado de acordo com o seu perfil, seus objetivos
+              e o seu momento. Aqui, o foco é você.
+            </p>
+            <a
+              class="primary-button"
+              href="https://wa.me/556181482244?text=Olá!%20Quero%20saber%20mais%20sobre%20o%20treinamento%20personalizado."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg class="button-icon" aria-hidden="true">
+                <use href="#icon-whatsapp" />
+              </svg>
+              Fale conosco no WhatsApp
+              <svg class="button-icon" aria-hidden="true">
+                <use href="#icon-arrow" />
+              </svg>
+            </a>
+          </div>
+          <div class="services-cards">
+            <div class="services-cards-item reveal">
+              <svg class="services-cards-img" aria-hidden="true">
+                <use href="#icon-dumbbell" />
+              </svg>
+              <div class="services-cards-item-copy">
+                <h4 class="services-cards-item-title">Hipertrofia</h4>
+                <p class="services-cards-item-text">
+                  Ganhe massa muscular com segurança e consistência.
+                </p>
+              </div>
+            </div>
+            <div class="services-cards-item reveal">
+              <svg class="services-cards-img" aria-hidden="true">
+                <use href="#icon-heart" />
+              </svg>
+              <div class="services-cards-item-copy">
+                <h4 class="services-cards-item-title">Emagrecimento</h4>
+                <p class="services-cards-item-text">
+                  Queime gordura e melhore sua composição corporal.
+                </p>
+              </div>
+            </div>
+            <div class="services-cards-item reveal">
+              <svg class="services-cards-img" aria-hidden="true">
+                <use href="#icon-activity" />
+              </svg>
+              <div class="services-cards-item-copy">
+                <h4 class="services-cards-item-title">
+                  Condicionamento físico
+                </h4>
+                <p class="services-cards-item-text">
+                  Mais fôlego, energia e performance no seu dia a dia.
+                </p>
+              </div>
+            </div>
+            <div class="services-cards-item reveal">
+              <svg class="services-cards-img" aria-hidden="true">
+                <use href="#icon-smile" />
+              </svg>
+              <div class="services-cards-item-copy">
+                <h4 class="services-cards-item-title">
+                  Saúde e qualidade de vida
+                </h4>
+                <p class="services-cards-item-text">
+                  Mais disposição, força e bem-estar em todas as fases.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="process" id="como-funciona">
+        <h2 class="section-title">COMO FUNCIONA</h2>
+        <div class="process-content">
+          <div class="process-copy">
+            <h3 class="section-headline">
+              Do primeiro contato
+              <span class="destaque">ao treino certo</span> em 4 passos
+            </h3>
+          </div>
+          <div class="process-cards">
+            <div class="process-cards-item reveal">
+              <span class="process-cards-number">01</span>
+              <div class="process-cards-item-copy">
+                <h4 class="process-cards-item-title">Primeiro contato</h4>
+                <p class="process-cards-item-text">
+                  Você chama nossa equipe pelo WhatsApp ou pelo formulário e conta
+                  qual é o seu objetivo.
+                </p>
+              </div>
+            </div>
+            <div class="process-cards-item reveal">
+              <span class="process-cards-number">02</span>
+              <div class="process-cards-item-copy">
+                <h4 class="process-cards-item-title">Acesso à plataforma</h4>
+                <p class="process-cards-item-text">
+                  Fechado o acompanhamento, cadastramos você na plataforma de
+                  treinos e você recebe seu acesso.
+                </p>
+              </div>
+            </div>
+            <div class="process-cards-item reveal">
+              <span class="process-cards-number">03</span>
+              <div class="process-cards-item-copy">
+                <h4 class="process-cards-item-title">
+                  Treino semanal sob medida
+                </h4>
+                <p class="process-cards-item-text">
+                  Toda semana o treino é ajustado aos dias que você vai treinar,
+                  com séries e exercícios distribuídos na medida certa.
+                </p>
+              </div>
+            </div>
+            <div class="process-cards-item reveal">
+              <span class="process-cards-number">04</span>
+              <div class="process-cards-item-copy">
+                <h4 class="process-cards-item-title">Suporte de perto</h4>
+                <p class="process-cards-item-text">
+                  Dúvida, imprevisto ou alguma dor? Estamos disponíveis para
+                  orientar e ajustar o seu treino.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="results" id="resultados">
+        <h2 class="section-title">RESULTADOS</h2>
+        <div class="results-content">
+          <div class="results-copy">
+            <h3 class="section-headline">
+              Resultados reais, de pessoas
+              <span class="destaque">reais.</span>
+            </h3>
+          </div>
+          <!-- antes e depois: fotos padronizadas em 600x900 (before-N / after-N) -->
+          <div class="results-cards">
+            <figure class="results-cards-item reveal">
+              <div class="results-cards-photos">
+                <div class="results-cards-photo">
+                  <img
+                    class="results-cards-img"
+                    src="assets/before-1.webp"
+                    alt="Aluna no início do acompanhamento"
+                    width="600"
+                    height="900"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span class="results-cards-tag">Antes</span>
+                </div>
+                <div class="results-cards-photo">
+                  <img
+                    class="results-cards-img"
+                    src="assets/after-1.webp"
+                    alt="A mesma aluna depois do acompanhamento, com mais massa muscular nas pernas, glúteos e ombros"
+                    width="600"
+                    height="900"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span
+                    class="results-cards-tag results-cards-tag-after"
+                    >Depois</span
+                  >
+                </div>
+              </div>
+              <figcaption class="results-cards-item-copy">
+                <h4 class="results-cards-item-title">Gabrielly</h4>
+                <p class="results-cards-item-text">
+                  Ganho de massa e hipertrofia · +18 kg
+                </p>
+              </figcaption>
+            </figure>
+            <figure class="results-cards-item reveal">
+              <div class="results-cards-photos">
+                <div class="results-cards-photo">
+                  <img
+                    class="results-cards-img"
+                    src="assets/before-2.webp"
+                    alt="Aluno no início do acompanhamento"
+                    width="600"
+                    height="900"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span class="results-cards-tag">Antes</span>
+                </div>
+                <div class="results-cards-photo">
+                  <img
+                    class="results-cards-img"
+                    src="assets/after-2.webp"
+                    alt="O mesmo aluno depois do acompanhamento, com mais massa muscular nos braços e ombros"
+                    width="600"
+                    height="900"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span
+                    class="results-cards-tag results-cards-tag-after"
+                    >Depois</span
+                  >
+                </div>
+              </div>
+              <figcaption class="results-cards-item-copy">
+                <h4 class="results-cards-item-title">Marcus</h4>
+                <p class="results-cards-item-text">
+                  Ganho de massa e hipertrofia · +12 kg
+                </p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+      <section class="testimonials" id="depoimentos">
+        <h2 class="section-title">DEPOIMENTOS</h2>
+        <div class="testimonials-content">
+          <div class="testimonials-copy">
+            <h3 class="section-headline">
+              O que dizem <span class="destaque">nossos alunos</span>
+            </h3>
+          </div>
+          <!-- placeholders: troque por depoimentos reais (nome, foto e texto) antes de publicar -->
+          <div class="testimonials-cards">
+            <div class="testimonials-cards-item reveal">
+              <div class="testimonials-cards-header">
+                <span class="testimonials-cards-avatar" aria-hidden="true"
+                  >A</span
+                >
+                <div class="testimonials-cards-item-copy">
+                  <h4 class="testimonials-cards-item-title">Nome do aluno</h4>
+                  <div class="testimonials-cards-stars" aria-label="5 estrelas">
+                    <svg class="testimonials-cards-img" aria-hidden="true">
+                      <use href="#icon-star" />
+                    </svg>
+                    <svg class="testimonials-cards-img" aria-hidden="true">
+                      <use href="#icon-star" />
+                    </svg>
+                    <svg class="testimonials-cards-img" aria-hidden="true">
+                      <use href="#icon-star" />
+                    </svg>
+                    <svg class="testimonials-cards-img" aria-hidden="true">
+                      <use href="#icon-star" />
+                    </svg>
+                    <svg class="testimonials-cards-img" aria-hidden="true">
+                      <use href="#icon-star" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <p class="testimonials-cards-item-text">
+                “Espaço reservado para o depoimento de um aluno. Substitua por um
+                relato real antes de publicar.”
+              </p>
+            </div>
+            <div class="testimonials-cards-item reveal">
+              <div class="testimonials-cards-header">
+                <span class="testimonials-cards-avatar" aria-hidden="true"
+                  >B</span
+                >
+                <div class="testimonials-cards-item-copy">
+                  <h4 class="testimonials-cards-item-title">Nome da aluna</h4>
+                  <div class="testimonials-cards-stars" aria-label="5 estrelas">
+                    <svg class="testimonials-cards-img" aria-hidden="true">
+                      <use href="#icon-star" />
+                    </svg>
+                    <svg class="testimonials-cards-img" aria-hidden="true">
+                      <use href="#icon-star" />
+                    </svg>
+                    <svg class="testimonials-cards-img" aria-hidden="true">
+                      <use href="#icon-star" />
+                    </svg>
+                    <svg class="testimonials-cards-img" aria-hidden="true">
+                      <use href="#icon-star" />
+                    </svg>
+                    <svg class="testimonials-cards-img" aria-hidden="true">
+                      <use href="#icon-star" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <p class="testimonials-cards-item-text">
+                “Espaço reservado para o depoimento de uma aluna. Substitua por
+                um relato real antes de publicar.”
+              </p>
+            </div>
+            <div class="testimonials-cards-item reveal">
+              <div class="testimonials-cards-header">
+                <span class="testimonials-cards-avatar" aria-hidden="true"
+                  >C</span
+                >
+                <div class="testimonials-cards-item-copy">
+                  <h4 class="testimonials-cards-item-title">Nome do aluno</h4>
+                  <div class="testimonials-cards-stars" aria-label="5 estrelas">
+                    <svg class="testimonials-cards-img" aria-hidden="true">
+                      <use href="#icon-star" />
+                    </svg>
+                    <svg class="testimonials-cards-img" aria-hidden="true">
+                      <use href="#icon-star" />
+                    </svg>
+                    <svg class="testimonials-cards-img" aria-hidden="true">
+                      <use href="#icon-star" />
+                    </svg>
+                    <svg class="testimonials-cards-img" aria-hidden="true">
+                      <use href="#icon-star" />
+                    </svg>
+                    <svg class="testimonials-cards-img" aria-hidden="true">
+                      <use href="#icon-star" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <p class="testimonials-cards-item-text">
+                “Espaço reservado para o depoimento de um aluno. Substitua por um
+                relato real antes de publicar.”
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="contact" id="contato">
+        <div class="contact-content">
+          <div class="contact-copy reveal">
+            <h2 class="section-title">CONTATO</h2>
+            <h3 class="section-headline">
+              Comece sua <span class="destaque">avaliação</span>
+            </h3>
+            <p class="contact-text">
+              Preencha seus dados e nossa equipe entra em contato para montarmos o
+              seu plano de treino.
+            </p>
+          </div>
+          <form class="form reveal" action="#">
+            <!-- campo invisível: só robô preenche -->
+            <input
+              type="text"
+              name="website"
+              id="website"
+              class="form-trap"
+              tabindex="-1"
+              autocomplete="off"
+              aria-hidden="true"
+            />
+            <div class="form-field">
+              <label class="form-label" for="name">Nome</label>
+              <input
+                class="form-input"
+                id="name"
+                type="text"
+                name="name"
+                placeholder="Seu nome"
+                autocomplete="name"
+                required
+              />
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="email">E-mail</label>
+              <input
+                class="form-input"
+                id="email"
+                type="email"
+                name="email"
+                placeholder="seuemail@exemplo.com"
+                autocomplete="email"
+                required
+              />
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="phone">WhatsApp</label>
+              <input
+                class="form-input"
+                id="phone"
+                type="tel"
+                name="phone"
+                placeholder="(61) 99999-9999"
+                autocomplete="tel"
+                required
+              />
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="goal">Objetivo</label>
+              <select class="form-input" id="goal" name="goal" required>
+                <option value="">Selecione seu objetivo</option>
+                <option value="Emagrecimento">Emagrecimento</option>
+                <option value="Hipertrofia">Hipertrofia</option>
+                <option value="Condicionamento físico">
+                  Condicionamento físico
+                </option>
+                <option value="Saúde e qualidade de vida">
+                  Saúde e qualidade de vida
+                </option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="message"
+                >Mensagem (opcional)</label
+              >
+              <textarea
+                class="form-input form-textarea"
+                id="message"
+                name="message"
+                placeholder="Conte um pouco sobre você e sua rotina"
+              ></textarea>
+            </div>
+            <button class="primary-button form-button" type="submit">
+              Enviar
+            </button>
+            <p class="form-status" role="status"></p>
+          </form>
+        </div>
+      </section>
+      <section class="cta-final">
+        <div class="cta-final-content">
+          <div class="cta-final-copy reveal">
+            <h2 class="section-title">VAMOS COMEÇAR?</h2>
+            <h3 class="section-headline">
+              Seu novo estilo de vida
+              <span class="destaque">começa agora.</span>
+            </h3>
+            <p class="cta-final-text">
+              Entre em contato e dê o primeiro passo para alcançar seus
+              objetivos.
+            </p>
+            <a
+              class="primary-button"
+              href="https://wa.me/556181482244?text=Olá!%20Vim%20pelo%20site%20e%20quero%20começar."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg class="button-icon" aria-hidden="true">
+                <use href="#icon-whatsapp" />
+              </svg>
+              Fale conosco
+              <svg class="button-icon" aria-hidden="true">
+                <use href="#icon-arrow" />
+              </svg>
+            </a>
+            <div class="cta-final-cards">
+              <div class="cta-final-cards-item reveal">
+                <svg class="cta-final-cards-img" aria-hidden="true">
+                  <use href="#icon-whatsapp" />
+                </svg>
+                <p class="cta-final-cards-item-text">Atendimento rápido</p>
+              </div>
+              <div class="cta-final-cards-item reveal">
+                <svg class="cta-final-cards-img" aria-hidden="true">
+                  <use href="#icon-pin" />
+                </svg>
+                <p class="cta-final-cards-item-text">
+                  Treinos presenciais e online
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-content">
+        <img
+          class="footer-logo"
+          src="assets/logo.webp"
+          alt="Logo da MC Personal Consultoria"
+          width="480"
+          height="75"
+          loading="lazy"
+          decoding="async"
+        />
+        <p class="footer-slogan">Mais força / Mais saúde / Mais você</p>
+        <div class="footer-links">
+          <a
+            class="footer-links-item"
+            href="https://www.instagram.com/mcpersonalconsultoria/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <svg class="footer-links-img" aria-hidden="true">
+              <use href="#icon-instagram" />
+            </svg>
+          </a>
+          <a
+            class="footer-links-item"
+            href="https://wa.me/556181482244"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+          >
+            <svg class="footer-links-img" aria-hidden="true">
+              <use href="#icon-whatsapp" />
+            </svg>
+          </a>
+          <a
+            class="footer-links-item"
+            href="mailto:mcpersonalconsultoria@gmail.com"
+            aria-label="E-mail"
+          >
+            <svg class="footer-links-img" aria-hidden="true">
+              <use href="#icon-mail" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <p class="footer-rights">
+        © 2026 MC Personal Consultoria. Desenvolvido por
+        <a
+          class="footer-rights-link"
+          href="https://www.instagram.com/carvalho0mrc/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Marcus Carvalho</a
+        >
+      </p>
+    </footer>
+    <a
+      class="whatsapp-float"
+      href="https://wa.me/556181482244?text=Olá!%20Vim%20pelo%20site%20e%20quero%20começar."
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Conversar no WhatsApp"
+    >
+      <svg class="whatsapp-float-img" aria-hidden="true">
+        <use href="#icon-whatsapp" />
+      </svg>
+    </a>
+    <script src="js/menu.js"></script>
+    <script src="js/reveal.js"></script>
+    <script src="js/active-link.js"></script>
+    <script src="js/form.js"></script>
+  </body>
+</html>

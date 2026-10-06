@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Work+Sans:wght@300;400;500;600&display=swap");
+
+:root {
+  /* ========================================CORES======================================== */
+
+  --primary-color: #f5b51b;
+  --primary-hover: #d99a00;
+  --secondary-hover: #2a2108;
+  --background-color: #07090d;
+  --secondary-background: #0d1016;
+  --card-color: #11141b;
+  --inputs-color: #0b0e13;
+  --border-color: #232731;
+  --overlay-color: rgba(7, 9, 13, 0.96);
+  --overlay-medium-color: rgba(7, 9, 13, 0.78);
+  --overlay-soft-color: rgba(7, 9, 13, 0.55);
+  --overlay-light-color: rgba(7, 9, 13, 0.15);
+  --whatsapp-color: #25d366;
+  --whatsapp-hover: #1da851;
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  --glass-color: rgba(255, 255, 255, 0.04);
+  --glass-hover-color: rgba(255, 255, 255, 0.07);
+  --glass-border-color: rgba(255, 255, 255, 0.09);
+  --glass-header-color: rgba(7, 9, 13, 0.55);
+  --glow-color: rgba(245, 181, 27, 0.12);
+
+  --title-color: #f5f5f5;
+  --text-color: #c3c7cf;
+  --icons-color: #f5b51b;
+
+  /*========================================TAMANHOS======================================== */
+
+  --fs-sm: 0.6875rem;
+  --fs-card: 0.8125rem;
+  --fs-detail: 0.875rem;
+  --fs-base: 1rem;
+  --fs-header-tablet: 1.125rem;
+  --fs-header-desktop: 1.5rem;
+  --fs-g: 2rem;
+  --fs-title: 2.75rem;
+  --fs-hero-tablet: 3.5rem;
+  --fs-xg: 4.5rem;
+
+  /*========================================FONTE======================================== */
+  --ftitle: "Oswald", sans-serif;
+  --ftexts: "Work Sans", sans-serif;
+
+  /*========================================PESO======================================== */
+  --title-weight: 700;
+  --text-weight: 400;
+  --menu-text-weight: 500;
+  --light-weight: 300;
+
+  /*========================================LAYOUT======================================== */
+
+  --container-width: 1150px;
+  --header-height: 5rem;
+  --glass-blur: 14px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+section[id] {
+  scroll-margin-top: var(--header-height);
+}
+body {
+  background-color: var(--background-color);
+  font-family: var(--ftexts);
+  color: var(--text-color);
+}
+main {
+  display: flex;
+  flex-direction: column;
+}
+a {
+  text-decoration: none;
+  color: var(--title-color);
+}
+/* as <img> têm width/height no HTML para reservar espaço; a altura real segue a largura do CSS */
+img {
+  height: auto;
+}
+/* contorno visível para quem navega pelo teclado (Tab); os campos do formulário já ganham borda dourada no contact.css */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 3px;
+}
+.destaque {
+  color: var(--primary-color);
+}
+/* sprite com os ícones da página: não aparece, só serve de fonte para os <use> */
+.icons {
+  display: none;
+}
+.section-title {
+  font-family: var(--ftexts);
+  font-size: var(--fs-sm);
+  font-weight: var(--menu-text-weight);
+  color: var(--primary-color);
+  letter-spacing: 0.25em;
+}
+.section-headline {
+  font-family: var(--ftitle);
+  font-size: var(--fs-g);
+  font-weight: var(--title-weight);
+  color: var(--title-color);
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1.75rem;
+  border: none;
+  border-radius: 3rem;
+  background-color: var(--primary-color);
+  font-family: var(--ftitle);
+  font-size: var(--fs-base);
+  font-weight: var(--menu-text-weight);
+  color: var(--background-color);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.primary-button:hover {
+  background-color: var(--primary-hover);
+  transform: scale(1.05);
+}
+.button-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+/* botão do WhatsApp fixo no canto, visível em toda a página */
+.whatsapp-float {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 900;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--whatsapp-color);
+  color: var(--title-color);
+  box-shadow: 0 0.5rem 1.5rem var(--shadow-color);
+  transition: all 0.3s;
+}
+.whatsapp-float:hover {
+  background-color: var(--whatsapp-hover);
+  transform: scale(1.1);
+}
+.whatsapp-float-img {
+  width: 30px;
+  height: 30px;
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+.reveal.visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* variação: entra deslizando pela esquerda em vez de subir */
+.reveal.reveal-left {
+  transition-duration: 0.8s;
+  transform: translateX(-60px);
+}
+.reveal.reveal-left.visivel {
+  transform: translateX(0);
+}
+/* variação: entra deslizando pela direita */
+.reveal.reveal-right {
+  transition-duration: 0.8s;
+  transform: translateX(60px);
+}
+.reveal.reveal-right.visivel {
+  transform: translateX(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal,
+  .reveal.reveal-left,
+  .reveal.reveal-right {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+/*==========tablet==========*/
+@media screen and (min-width: 768px) {
+  .section-headline {
+    font-size: var(--fs-title);
+  }
+}
+/*==========desktop==========*/
+@media screen and (min-width: 1024px) {
+  .whatsapp-float {
+    right: 2rem;
+    bottom: 2rem;
+    width: 60px;
+    height: 60px;
+  }
+}

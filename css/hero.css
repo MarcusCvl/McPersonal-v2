@@ -1,0 +1,210 @@
+/*==========mobile==========*/
+/* no celular a foto fica no topo e o degradê escurece a parte de baixo, onde fica o texto */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: var(--header-height) 1rem 2.5rem 1rem;
+  background-color: var(--background-color);
+  background-image:
+    linear-gradient(180deg, transparent 30%, var(--background-color) 60%),
+    url("../assets/hero.webp");
+  /* 66% centraliza o Márcio, que está à direita na foto */
+  background-position:
+    center,
+    66% var(--header-height);
+  background-repeat: no-repeat;
+  /* altura fixa em vez de cover, para a foto não ampliar demais em telas altas */
+  background-size:
+    100% 100%,
+    auto 58%;
+}
+.hero-content {
+  display: flex;
+  width: 100%;
+  max-width: var(--container-width);
+  margin-inline: auto;
+}
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+  max-width: 560px;
+}
+.hero-tagline {
+  font-size: var(--fs-sm);
+  font-weight: var(--menu-text-weight);
+  color: var(--title-color);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+}
+/* "PRIMEIRO PASSO." é a linha mais larga (~7.4x o tamanho da fonte em Oswald):
+   - em celular estreito a fonte diminui para ela caber;
+   - max-width de 7.6em impede "SEU PROGRESSO COMEÇA..." numa linha só em telas largas,
+     então o título quebra sempre em 3 linhas, em qualquer tamanho de tela */
+.hero-title {
+  max-width: 7.6em;
+  font-family: var(--ftitle);
+  font-size: min(var(--fs-title), calc((100vw - 2rem) / 7.6));
+  font-weight: var(--title-weight);
+  color: var(--title-color);
+  line-height: 1;
+  text-transform: uppercase;
+}
+.hero-title .destaque {
+  display: block;
+}
+.hero-text {
+  font-size: var(--fs-base);
+  color: var(--title-color);
+  line-height: 1.6;
+}
+.hero-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  padding-top: 1rem;
+}
+.hero-cards-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0 0.75rem;
+}
+.hero-cards-item:first-child {
+  padding-left: 0;
+}
+.hero-cards-item:not(:first-child) {
+  border-left: 1px solid var(--border-color);
+}
+.hero-cards-item.reveal:nth-child(1) {
+  transition-delay: 0s;
+}
+.hero-cards-item.reveal:nth-child(2) {
+  transition-delay: 0.15s;
+}
+.hero-cards-item.reveal:nth-child(3) {
+  transition-delay: 0.3s;
+}
+.hero-cards-img {
+  width: 30px;
+  height: 30px;
+  color: var(--icons-color);
+}
+.hero-cards-item-title {
+  font-family: var(--ftitle);
+  font-size: var(--fs-card);
+  font-weight: var(--menu-text-weight);
+  color: var(--title-color);
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+/* a foto tem altura fixa (58%) e é mais larga que alta: a partir de 4/5 de proporção
+   ela fica mais estreita que a tela e sobram faixas nas laterais, então passa a preencher a largura */
+/* max(100%, 110vh): em celular deitado a foto também precisa de altura (110vh de largura
+   = 62vh de altura), senão ela termina numa linha reta antes de o degradê escurecer tudo */
+@media screen and (min-aspect-ratio: 4/5) {
+  .hero {
+    background-size:
+      100% 100%,
+      max(100%, 110vh) auto;
+  }
+}
+/*==========tablet==========*/
+/* no tablet o hero segue a organização do PC: texto à esquerda e o Márcio logo à direita.
+   A foto é ancorada na borda direita do texto, com a mesma conta do desktop (ver lá) */
+@media screen and (min-width: 768px) {
+  .hero {
+    justify-content: center;
+    min-height: 75vh;
+    padding: calc(var(--header-height) + 2.5rem) 2rem 3rem 2rem;
+    /* a 2ª camada esfuma a base da foto: quando o texto quebra em mais linhas o hero
+       fica mais alto que a foto, e sem ela a foto terminava numa linha reta */
+    background-image:
+      linear-gradient(
+        90deg,
+        var(--background-color) 30%,
+        var(--overlay-light-color) 75%
+      ),
+      linear-gradient(
+        180deg,
+        transparent 60%,
+        var(--background-color) 94%
+      ),
+      url("../assets/hero.webp");
+    background-repeat: no-repeat;
+    /* o texto ocupa até metade da tela (no máximo 460px) */
+    --hero-copy-width: min(460px, 50vw - 2rem);
+    --hero-text-right: calc(2rem + var(--hero-copy-width));
+    --hero-photo-height: max(75vh, 1.03 * (100vw - var(--hero-text-right)));
+    background-position:
+      center,
+      top,
+      calc(var(--hero-text-right) - 0.8 * var(--hero-photo-height)) top;
+    background-size:
+      100% 100%,
+      100% var(--hero-photo-height),
+      auto var(--hero-photo-height);
+  }
+  .hero-copy {
+    max-width: var(--hero-copy-width);
+  }
+  /* o título acompanha a largura do texto para ficar sempre em 3 linhas */
+  .hero-title {
+    font-size: min(var(--fs-hero-tablet), var(--hero-copy-width) / 7.6);
+  }
+  .hero-text {
+    font-size: var(--fs-header-tablet);
+  }
+  .hero-cards-item {
+    padding: 0 1rem;
+  }
+}
+/* tablet deitado: o hero ocupa a tela toda, como no PC */
+@media screen and (min-width: 768px) and (min-aspect-ratio: 1/1) {
+  .hero {
+    min-height: 100vh;
+    --hero-photo-height: max(100vh, 1.03 * (100vw - var(--hero-text-right)));
+  }
+}
+/*==========desktop==========*/
+/* desktop deitado: hero na altura da tela e texto com a largura cheia.
+   min-aspect-ratio 1/1: desktop em pé (ex.: iPad Pro 1024x1366) segue com os ajustes do tablet */
+@media screen and (min-width: 1024px) and (min-aspect-ratio: 1/1) {
+  .hero {
+    justify-content: center;
+    min-height: 100vh;
+    padding: var(--header-height) 2rem 0 2rem;
+    background-image:
+      linear-gradient(
+        90deg,
+        var(--background-color) 25%,
+        var(--overlay-light-color) 65%
+      ),
+      url("../assets/hero.webp");
+    /* a foto é posicionada a partir do texto, para o Márcio ficar sempre logo à direita dele:
+       - borda direita do texto: o conteúdo (1150px, centralizado, 2rem de margem) + 560px do texto
+       - na foto (1513x851), o cotovelo dele está a 80% da altura da foto contando da borda esquerda
+         (rosto a 112.9% e braço ~32.5% antes), então: posição = borda do texto - 0.8 * altura
+       - a altura da foto é a do hero, ou maior se for preciso para ela cobrir até a borda direita
+         em telas bem largas (1.03 = 1 / (1.778 - 0.8), com folga) */
+    --hero-text-right: max(592px, 50vw - 15px);
+    --hero-photo-height: max(100vh, 1.03 * (100vw - var(--hero-text-right)));
+    background-position:
+      center,
+      calc(var(--hero-text-right) - 0.8 * var(--hero-photo-height)) top;
+    background-size:
+      100% 100%,
+      auto var(--hero-photo-height);
+  }
+  .hero-copy {
+    max-width: 560px;
+    padding: 4rem 0;
+  }
+  .hero-title {
+    font-size: var(--fs-xg);
+  }
+}
