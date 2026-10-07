@@ -28,17 +28,38 @@
   display: flex;
   flex-direction: column;
 }
-/* grid-auto-rows: 1fr deixa todos os cards com a altura do maior, inclusive empilhados no celular */
+.testimonials-carousel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+/* trilho do carrossel: rola de lado, encaixa um card por vez e esconde a barra de rolagem;
+   em flex os cards já ficam todos com a altura do maior */
 .testimonials-cards {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-auto-rows: 1fr;
+  display: flex;
   gap: 1rem;
+  /* o respiro em volta deixa o zoom do hover aparecer sem ser cortado pelo overflow */
+  padding: 0.5rem 0.25rem;
+  margin: -0.5rem -0.25rem;
+  overflow-x: auto;
+  scroll-padding-inline: 0.25rem;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.testimonials-cards::-webkit-scrollbar {
+  display: none;
+}
+.testimonials-cards:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 3px;
 }
 .testimonials-cards-item {
   display: flex;
   flex-direction: column;
+  flex: 0 0 100%;
   gap: 1.25rem;
+  scroll-snap-align: start;
   padding: 1.5rem;
   border: 1px solid var(--glass-border-color);
   border-radius: 0.75rem;
@@ -132,12 +153,71 @@
   color: var(--text-color);
   line-height: 1.6;
 }
+/* setas e bolinhas embaixo do carrossel */
+.testimonials-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+}
+.testimonials-controls-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--glass-border-color);
+  border-radius: 50%;
+  background-color: var(--glass-color);
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.testimonials-controls-button:hover {
+  border-color: var(--primary-color);
+  background-color: var(--secondary-hover);
+}
+.testimonials-controls-img {
+  width: 18px;
+  height: 18px;
+}
+/* o ícone é uma seta para a direita; na seta "anterior" ele é espelhado */
+.testimonials-controls-prev .testimonials-controls-img {
+  transform: scaleX(-1);
+}
+.testimonials-dots {
+  display: flex;
+  gap: 0.5rem;
+}
+.testimonials-dots-button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 1rem;
+  background-color: var(--border-color);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+/* classe adicionada pelo carousel.js na bolinha da posição atual */
+.testimonials-dots-button.ativo {
+  width: 24px;
+  background-color: var(--primary-color);
+}
 /*==========tablet==========*/
 @media screen and (min-width: 768px) {
   .testimonials {
     padding: 6rem 2rem 5rem 2rem;
   }
-  .testimonials-cards {
-    grid-template-columns: repeat(3, 1fr);
+  /* 2 cards visíveis: cada um ocupa metade do trilho menos metade do espaço entre eles */
+  .testimonials-cards-item {
+    flex-basis: calc((100% - 1rem) / 2);
+  }
+}
+/*==========desktop==========*/
+@media screen and (min-width: 1024px) {
+  /* 3 cards visíveis */
+  .testimonials-cards-item {
+    flex-basis: calc((100% - 2rem) / 3);
   }
 }

@@ -705,139 +705,244 @@
               O que dizem <span class="destaque">nossos alunos</span>
             </h3>
           </div>
-          <!-- ordem: homem, mulher, homem; aluno sem profissão usa a linha invisível -->
-          <div class="testimonials-cards">
-            <div class="testimonials-cards-item reveal">
-              <div class="testimonials-cards-header">
-                <img
-                  class="testimonials-cards-avatar"
-                  src="assets/testimonial-1.webp"
-                  alt="Magno Junior"
-                  width="160"
-                  height="160"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div class="testimonials-cards-item-copy">
-                  <h4 class="testimonials-cards-item-title">Magno Junior</h4>
-                  <p class="testimonials-cards-item-role">
-                    Militar e maratonista
-                  </p>
-                  <div class="testimonials-cards-stars" aria-label="5 estrelas">
-                    <svg class="testimonials-cards-img" aria-hidden="true">
-                      <use href="#icon-star" />
-                    </svg>
-                    <svg class="testimonials-cards-img" aria-hidden="true">
-                      <use href="#icon-star" />
-                    </svg>
-                    <svg class="testimonials-cards-img" aria-hidden="true">
-                      <use href="#icon-star" />
-                    </svg>
-                    <svg class="testimonials-cards-img" aria-hidden="true">
-                      <use href="#icon-star" />
-                    </svg>
-                    <svg class="testimonials-cards-img" aria-hidden="true">
-                      <use href="#icon-star" />
-                    </svg>
+          <!-- ordem: homem, mulher, homem, mulher, homem; aluno sem profissão usa a linha invisível -->
+          <div
+            class="testimonials-carousel"
+            role="region"
+            aria-roledescription="carrossel"
+            aria-label="Depoimentos dos alunos"
+          >
+            <div class="testimonials-cards" tabindex="0">
+              <div class="testimonials-cards-item reveal">
+                <div class="testimonials-cards-header">
+                  <img
+                    class="testimonials-cards-avatar"
+                    src="assets/testimonial-1.webp"
+                    alt="Magno Junior"
+                    width="160"
+                    height="160"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div class="testimonials-cards-item-copy">
+                    <h4 class="testimonials-cards-item-title">Magno Junior</h4>
+                    <p class="testimonials-cards-item-role">
+                      Militar e maratonista
+                    </p>
+                    <div class="testimonials-cards-stars" aria-label="5 estrelas">
+                      <svg class="testimonials-cards-img" aria-hidden="true">
+                        <use href="#icon-star" />
+                      </svg>
+                      <svg class="testimonials-cards-img" aria-hidden="true">
+                        <use href="#icon-star" />
+                      </svg>
+                      <svg class="testimonials-cards-img" aria-hidden="true">
+                        <use href="#icon-star" />
+                      </svg>
+                      <svg class="testimonials-cards-img" aria-hidden="true">
+                        <use href="#icon-star" />
+                      </svg>
+                      <svg class="testimonials-cards-img" aria-hidden="true">
+                        <use href="#icon-star" />
+                      </svg>
+                    </div>
                   </div>
                 </div>
+                <p class="testimonials-cards-item-text">
+                  “Achei que não teria tempo pra força. Com o Márcio, tive. Há
+                  quase um ano treino com ele e completei a maratona sem lesão.
+                  Quer sair do improviso? Treine com ele!”
+                </p>
               </div>
-              <p class="testimonials-cards-item-text">
-                “Achei que não teria tempo pra força. Com o Márcio, tive. Há
-                quase um ano treino com ele e completei a maratona sem lesão.
-                Quer sair do improviso? Treine com ele!”
-              </p>
-            </div>
-            <div class="testimonials-cards-item reveal">
-              <div class="testimonials-cards-header">
-                <img
-                  class="testimonials-cards-avatar"
-                  src="assets/testimonial-2.webp"
-                  alt="Gabriela Hack"
-                  width="160"
-                  height="160"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div class="testimonials-cards-item-copy">
-                  <h4 class="testimonials-cards-item-title">Gabriela Hack</h4>
-                  <!-- sem profissão: linha invisível só para manter a altura igual aos outros cards -->
-                  <p
-                    class="testimonials-cards-item-role testimonials-cards-item-role-empty"
-                    aria-hidden="true"
+              <div class="testimonials-cards-item reveal">
+                <div class="testimonials-cards-header">
+                  <img
+                    class="testimonials-cards-avatar"
+                    src="assets/testimonial-2.webp"
+                    alt="Gabriela Hack"
+                    width="160"
+                    height="160"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div class="testimonials-cards-item-copy">
+                    <h4 class="testimonials-cards-item-title">Gabriela Hack</h4>
+                    <!-- sem profissão: linha invisível só para manter a altura igual aos outros cards -->
+                    <p
+                      class="testimonials-cards-item-role testimonials-cards-item-role-empty"
+                      aria-hidden="true"
+                    >
+                      &nbsp;
+                    </p>
+                    <div class="testimonials-cards-stars" aria-label="5 estrelas">
+                      <svg class="testimonials-cards-img" aria-hidden="true">
+                        <use href="#icon-star" />
+                      </svg>
+                      <svg class="testimonials-cards-img" aria-hidden="true">
+                        <use href="#icon-star" />
+                      </svg>
+                      <svg class="testimonials-cards-img" aria-hidden="true">
+                        <use href="#icon-star" />
+                      </svg>
+                      <svg class="testimonials-cards-img" aria-hidden="true">
+                        <use href="#icon-star" />
+                      </svg>
+                      <svg class="testimonials-cards-img" aria-hidden="true">
+                        <use href="#icon-star" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <p class="testimonials-cards-item-text">
+                  “Com a MC Personal Consultoria, tenho um atendimento
+                  personalizado que leva em conta minha rotina bastante corrida,
+                  com treinos perfeitamente alinhados aos meus objetivos.”
+                </p>
+              </div>
+              <div class="testimonials-cards-item reveal">
+                <div class="testimonials-cards-header">
+                  <img
+                    class="testimonials-cards-avatar"
+                    src="assets/testimonial-3.webp"
+                    alt="Wesley Toledo"
+                    width="160"
+                    height="160"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div class="testimonials-cards-item-copy">
+                    <h4 class="testimonials-cards-item-title">Wesley Toledo</h4>
+                    <!-- sem profissão: linha invisível só para manter a altura igual aos outros cards -->
+                    <p
+                      class="testimonials-cards-item-role testimonials-cards-item-role-empty"
+                      aria-hidden="true"
+                    >
+                      &nbsp;
+                    </p>
+                    <div class="testimonials-cards-stars" aria-label="5 estrelas">
+                      <svg class="testimonials-cards-img" aria-hidden="true">
+                        <use href="#icon-star" />
+                      </svg>
+                      <svg class="testimonials-cards-img" aria-hidden="true">
+                        <use href="#icon-star" />
+                      </svg>
+                      <svg class="testimonials-cards-img" aria-hidden="true">
+                        <use href="#icon-star" />
+                      </svg>
+                      <svg class="testimonials-cards-img" aria-hidden="true">
+                        <use href="#icon-star" />
+                      </svg>
+                      <svg class="testimonials-cards-img" aria-hidden="true">
+                        <use href="#icon-star" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <p class="testimonials-cards-item-text">
+                  “Estou com a MC Consultoria desde o início da trajetória. Fazer
+                  parte da consultoria desde o início me permitiu perceber que o
+                  trabalho vai além da simples prescrição de treinos. Existe uma
+                  preocupação genuína com a evolução de cada aluno.”
+                </p>
+              </div>
+              <!-- placeholder: troque pela foto, nome e depoimento reais -->
+              <div class="testimonials-cards-item reveal">
+                <div class="testimonials-cards-header">
+                  <span class="testimonials-cards-avatar" aria-hidden="true"
+                    >D</span
                   >
-                    &nbsp;
-                  </p>
-                  <div class="testimonials-cards-stars" aria-label="5 estrelas">
-                    <svg class="testimonials-cards-img" aria-hidden="true">
-                      <use href="#icon-star" />
-                    </svg>
-                    <svg class="testimonials-cards-img" aria-hidden="true">
-                      <use href="#icon-star" />
-                    </svg>
-                    <svg class="testimonials-cards-img" aria-hidden="true">
-                      <use href="#icon-star" />
-                    </svg>
-                    <svg class="testimonials-cards-img" aria-hidden="true">
-                      <use href="#icon-star" />
-                    </svg>
-                    <svg class="testimonials-cards-img" aria-hidden="true">
-                      <use href="#icon-star" />
-                    </svg>
+                  <div class="testimonials-cards-item-copy">
+                    <h4 class="testimonials-cards-item-title">Nome da aluna</h4>
+                    <p
+                      class="testimonials-cards-item-role testimonials-cards-item-role-empty"
+                      aria-hidden="true"
+                    >
+                      &nbsp;
+                    </p>
+                    <div class="testimonials-cards-stars" aria-label="5 estrelas">
+                      <svg class="testimonials-cards-img" aria-hidden="true">
+                        <use href="#icon-star" />
+                      </svg>
+                      <svg class="testimonials-cards-img" aria-hidden="true">
+                        <use href="#icon-star" />
+                      </svg>
+                      <svg class="testimonials-cards-img" aria-hidden="true">
+                        <use href="#icon-star" />
+                      </svg>
+                      <svg class="testimonials-cards-img" aria-hidden="true">
+                        <use href="#icon-star" />
+                      </svg>
+                      <svg class="testimonials-cards-img" aria-hidden="true">
+                        <use href="#icon-star" />
+                      </svg>
+                    </div>
                   </div>
                 </div>
+                <p class="testimonials-cards-item-text">
+                  “Espaço reservado para o depoimento de uma aluna. Substitua por
+                  um relato real antes de publicar.”
+                </p>
               </div>
-              <p class="testimonials-cards-item-text">
-                “Com a MC Personal Consultoria, tenho um atendimento
-                personalizado que leva em conta minha rotina bastante corrida,
-                com treinos perfeitamente alinhados aos meus objetivos.”
-              </p>
-            </div>
-            <div class="testimonials-cards-item reveal">
-              <div class="testimonials-cards-header">
-                <img
-                  class="testimonials-cards-avatar"
-                  src="assets/testimonial-3.webp"
-                  alt="Wesley Toledo"
-                  width="160"
-                  height="160"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div class="testimonials-cards-item-copy">
-                  <h4 class="testimonials-cards-item-title">Wesley Toledo</h4>
-                  <!-- sem profissão: linha invisível só para manter a altura igual aos outros cards -->
-                  <p
-                    class="testimonials-cards-item-role testimonials-cards-item-role-empty"
-                    aria-hidden="true"
+              <!-- placeholder: troque pela foto, nome e depoimento reais -->
+              <div class="testimonials-cards-item reveal">
+                <div class="testimonials-cards-header">
+                  <span class="testimonials-cards-avatar" aria-hidden="true"
+                    >E</span
                   >
-                    &nbsp;
-                  </p>
-                  <div class="testimonials-cards-stars" aria-label="5 estrelas">
-                    <svg class="testimonials-cards-img" aria-hidden="true">
-                      <use href="#icon-star" />
-                    </svg>
-                    <svg class="testimonials-cards-img" aria-hidden="true">
-                      <use href="#icon-star" />
-                    </svg>
-                    <svg class="testimonials-cards-img" aria-hidden="true">
-                      <use href="#icon-star" />
-                    </svg>
-                    <svg class="testimonials-cards-img" aria-hidden="true">
-                      <use href="#icon-star" />
-                    </svg>
-                    <svg class="testimonials-cards-img" aria-hidden="true">
-                      <use href="#icon-star" />
-                    </svg>
+                  <div class="testimonials-cards-item-copy">
+                    <h4 class="testimonials-cards-item-title">Nome do aluno</h4>
+                    <p
+                      class="testimonials-cards-item-role testimonials-cards-item-role-empty"
+                      aria-hidden="true"
+                    >
+                      &nbsp;
+                    </p>
+                    <div class="testimonials-cards-stars" aria-label="5 estrelas">
+                      <svg class="testimonials-cards-img" aria-hidden="true">
+                        <use href="#icon-star" />
+                      </svg>
+                      <svg class="testimonials-cards-img" aria-hidden="true">
+                        <use href="#icon-star" />
+                      </svg>
+                      <svg class="testimonials-cards-img" aria-hidden="true">
+                        <use href="#icon-star" />
+                      </svg>
+                      <svg class="testimonials-cards-img" aria-hidden="true">
+                        <use href="#icon-star" />
+                      </svg>
+                      <svg class="testimonials-cards-img" aria-hidden="true">
+                        <use href="#icon-star" />
+                      </svg>
+                    </div>
                   </div>
                 </div>
+                <p class="testimonials-cards-item-text">
+                  “Espaço reservado para o depoimento de um aluno. Substitua por
+                  um relato real antes de publicar.”
+                </p>
               </div>
-              <p class="testimonials-cards-item-text">
-                “Estou com a MC Consultoria desde o início da trajetória. Fazer
-                parte da consultoria desde o início me permitiu perceber que o
-                trabalho vai além da simples prescrição de treinos. Existe uma
-                preocupação genuína com a evolução de cada aluno.”
-              </p>
+            </div>
+            <div class="testimonials-controls">
+              <button
+                class="testimonials-controls-button testimonials-controls-prev"
+                type="button"
+                aria-label="Depoimento anterior"
+              >
+                <svg class="testimonials-controls-img" aria-hidden="true">
+                  <use href="#icon-arrow" />
+                </svg>
+              </button>
+              <!-- bolinhas criadas pelo carousel.js, uma por posição do carrossel -->
+              <div class="testimonials-dots"></div>
+              <button
+                class="testimonials-controls-button"
+                type="button"
+                aria-label="Próximo depoimento"
+              >
+                <svg class="testimonials-controls-img" aria-hidden="true">
+                  <use href="#icon-arrow" />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
@@ -1050,6 +1155,7 @@
     <script src="js/menu.js"></script>
     <script src="js/reveal.js"></script>
     <script src="js/active-link.js"></script>
+    <script src="js/carousel.js"></script>
     <script src="js/form.js"></script>
   </body>
 </html>
