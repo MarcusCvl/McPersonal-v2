@@ -114,6 +114,10 @@
   font-size: var(--fs-card);
   color: var(--text-color);
 }
+/* aluno sem profissão: a linha ocupa o espaço mas não aparece, para os cards ficarem iguais */
+.testimonials-cards-item-role-empty {
+  visibility: hidden;
+}
 .testimonials-cards-stars {
   display: flex;
   gap: 0.2rem;

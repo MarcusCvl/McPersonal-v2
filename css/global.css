@@ -161,6 +161,28 @@ button:focus-visible {
   background-color: var(--whatsapp-hover);
   transform: scale(1.1);
 }
+/* pulso: um anel verde sai do botão e some, a cada 3s, para chamar atenção sem mexer no botão */
+.whatsapp-float::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 50%;
+  background-color: var(--whatsapp-color);
+  animation: pulso 3s ease-out infinite;
+}
+@keyframes pulso {
+  0% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  /* o anel cresce e some no primeiro terço; no resto do ciclo fica parado, invisível */
+  35%,
+  100% {
+    opacity: 0;
+    transform: scale(1.7);
+  }
+}
 .whatsapp-float-img {
   width: 30px;
   height: 30px;
@@ -202,6 +224,10 @@ button:focus-visible {
     transition: none;
     opacity: 1;
     transform: none;
+  }
+  .whatsapp-float::before {
+    animation: none;
+    opacity: 0;
   }
 }
 /*==========tablet==========*/
