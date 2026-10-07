@@ -922,28 +922,27 @@
                 </p>
               </div>
             </div>
-            <div class="testimonials-controls">
-              <button
-                class="testimonials-controls-button testimonials-controls-prev"
-                type="button"
-                aria-label="Depoimento anterior"
-              >
-                <svg class="testimonials-controls-img" aria-hidden="true">
-                  <use href="#icon-arrow" />
-                </svg>
-              </button>
-              <!-- bolinhas criadas pelo carousel.js, uma por posição do carrossel -->
-              <div class="testimonials-dots"></div>
-              <button
-                class="testimonials-controls-button"
-                type="button"
-                aria-label="Próximo depoimento"
-              >
-                <svg class="testimonials-controls-img" aria-hidden="true">
-                  <use href="#icon-arrow" />
-                </svg>
-              </button>
-            </div>
+            <!-- setas e bolinhas: o CSS posiciona as setas nas laterais a partir do tablet -->
+            <button
+              class="testimonials-controls-button testimonials-controls-prev"
+              type="button"
+              aria-label="Depoimento anterior"
+            >
+              <svg class="testimonials-controls-img" aria-hidden="true">
+                <use href="#icon-arrow" />
+              </svg>
+            </button>
+            <button
+              class="testimonials-controls-button testimonials-controls-next"
+              type="button"
+              aria-label="Próximo depoimento"
+            >
+              <svg class="testimonials-controls-img" aria-hidden="true">
+                <use href="#icon-arrow" />
+              </svg>
+            </button>
+            <!-- bolinhas criadas pelo carousel.js, uma por depoimento -->
+            <div class="testimonials-dots"></div>
           </div>
         </div>
       </section>

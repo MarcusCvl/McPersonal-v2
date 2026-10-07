@@ -28,10 +28,29 @@
   display: flex;
   flex-direction: column;
 }
+/* no celular: cards em cima e, embaixo, seta / bolinhas / seta */
 .testimonials-carousel {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-areas:
+    "cards cards cards"
+    "prev dots next";
+  align-items: center;
   gap: 1.25rem;
+}
+.testimonials-cards {
+  grid-area: cards;
+}
+.testimonials-controls-prev {
+  grid-area: prev;
+  justify-self: end;
+}
+.testimonials-controls-next {
+  grid-area: next;
+  justify-self: start;
+}
+.testimonials-dots {
+  grid-area: dots;
 }
 /* trilho do carrossel: rola de lado, encaixa um card por vez e esconde a barra de rolagem;
    em flex os cards já ficam todos com a altura do maior */
@@ -88,14 +107,15 @@
   -webkit-backdrop-filter: blur(0);
   backdrop-filter: blur(0);
 }
-/* atraso só nas quatro primeiras propriedades (as da entrada) */
-.testimonials-cards-item.reveal:nth-child(1) {
+/* atraso só nas quatro primeiras propriedades (as da entrada); "of .reveal" conta só os cards
+   reais, porque as cópias criadas pelo carousel.js não têm .reveal */
+.testimonials-cards-item:nth-child(1 of .reveal) {
   transition-delay: 0s;
 }
-.testimonials-cards-item.reveal:nth-child(2) {
+.testimonials-cards-item:nth-child(2 of .reveal) {
   transition-delay: 0.15s, 0.15s, 0.15s, 0.15s, 0s, 0s, 0s;
 }
-.testimonials-cards-item.reveal:nth-child(3) {
+.testimonials-cards-item:nth-child(3 of .reveal) {
   transition-delay: 0.3s, 0.3s, 0.3s, 0.3s, 0s, 0s, 0s;
 }
 /* altura fixa: com ou sem a linha de profissão, o depoimento começa na mesma altura */
@@ -153,13 +173,6 @@
   color: var(--text-color);
   line-height: 1.6;
 }
-/* setas e bolinhas embaixo do carrossel */
-.testimonials-controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.25rem;
-}
 .testimonials-controls-button {
   display: flex;
   align-items: center;
@@ -208,6 +221,21 @@
 @media screen and (min-width: 768px) {
   .testimonials {
     padding: 6rem 2rem 5rem 2rem;
+  }
+  /* setas nas laterais, centralizadas na altura dos cards; bolinhas embaixo */
+  .testimonials-carousel {
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+      "prev cards next"
+      ". dots .";
+    column-gap: 1rem;
+  }
+  .testimonials-controls-prev,
+  .testimonials-controls-next {
+    justify-self: center;
+  }
+  .testimonials-dots {
+    justify-self: center;
   }
   /* 2 cards visíveis: cada um ocupa metade do trilho menos metade do espaço entre eles */
   .testimonials-cards-item {
