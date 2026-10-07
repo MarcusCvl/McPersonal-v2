@@ -28,9 +28,11 @@
   display: flex;
   flex-direction: column;
 }
+/* grid-auto-rows: 1fr deixa todos os cards com a altura do maior, inclusive empilhados no celular */
 .testimonials-cards {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: 1fr;
   gap: 1rem;
 }
 .testimonials-cards-item {
@@ -75,12 +77,14 @@
 .testimonials-cards-item.reveal:nth-child(3) {
   transition-delay: 0.3s, 0.3s, 0.3s, 0.3s, 0s, 0s, 0s;
 }
+/* altura fixa: com ou sem a linha de profissão, o depoimento começa na mesma altura */
 .testimonials-cards-header {
   display: flex;
   align-items: center;
   gap: 0.9rem;
+  min-height: 4.5rem;
 }
-/* inicial no lugar da foto até entrarem os depoimentos reais */
+/* foto redonda do aluno; nos placeholders é um <span> com a inicial */
 .testimonials-cards-avatar {
   display: flex;
   align-items: center;
@@ -94,6 +98,7 @@
   font-family: var(--ftitle);
   font-size: var(--fs-header-tablet);
   color: var(--primary-color);
+  object-fit: cover;
 }
 .testimonials-cards-item-copy {
   display: flex;
@@ -104,6 +109,10 @@
   font-size: var(--fs-detail);
   font-weight: var(--menu-text-weight);
   color: var(--title-color);
+}
+.testimonials-cards-item-role {
+  font-size: var(--fs-card);
+  color: var(--text-color);
 }
 .testimonials-cards-stars {
   display: flex;
