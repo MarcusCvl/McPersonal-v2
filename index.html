@@ -705,7 +705,7 @@
               O que dizem <span class="destaque">nossos alunos</span>
             </h3>
           </div>
-          <!-- ordem: homem, mulher, homem; o card 3 ainda é placeholder -->
+          <!-- ordem: homem, mulher, homem; aluno sem profissão usa a linha invisível -->
           <div class="testimonials-cards">
             <div class="testimonials-cards-item reveal">
               <div class="testimonials-cards-header">
@@ -795,11 +795,18 @@
             </div>
             <div class="testimonials-cards-item reveal">
               <div class="testimonials-cards-header">
-                <span class="testimonials-cards-avatar" aria-hidden="true"
-                  >C</span
-                >
+                <img
+                  class="testimonials-cards-avatar"
+                  src="assets/testimonial-3.webp"
+                  alt="Wesley Toledo"
+                  width="160"
+                  height="160"
+                  loading="lazy"
+                  decoding="async"
+                />
                 <div class="testimonials-cards-item-copy">
-                  <h4 class="testimonials-cards-item-title">Nome do aluno</h4>
+                  <h4 class="testimonials-cards-item-title">Wesley Toledo</h4>
+                  <!-- sem profissão: linha invisível só para manter a altura igual aos outros cards -->
                   <p
                     class="testimonials-cards-item-role testimonials-cards-item-role-empty"
                     aria-hidden="true"
@@ -826,8 +833,10 @@
                 </div>
               </div>
               <p class="testimonials-cards-item-text">
-                “Espaço reservado para o depoimento de um aluno. Substitua por um
-                relato real antes de publicar.”
+                “Estou com a MC Consultoria desde o início da trajetória. Fazer
+                parte da consultoria desde o início me permitiu perceber que o
+                trabalho vai além da simples prescrição de treinos. Existe uma
+                preocupação genuína com a evolução de cada aluno.”
               </p>
             </div>
           </div>
