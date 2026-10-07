@@ -50,12 +50,16 @@
   color: var(--text-color);
   text-align: center;
 }
+/* sublinhado: só a cor não basta para diferenciar o link do texto em volta */
 .footer-rights-link {
   color: var(--title-color);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
   transition: all 0.3s;
 }
 .footer-rights-link:hover {
   color: var(--primary-color);
+  text-decoration: none;
 }
 /*==========tablet==========*/
 @media screen and (min-width: 768px) {
