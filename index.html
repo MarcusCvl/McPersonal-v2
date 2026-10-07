@@ -5,24 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Márcio Carvalho, personal trainer: treinos personalizados, acompanhamento de perto e um método direto ao ponto para você conquistar mais saúde, força e performance."
+      content="Consultoria e treino online com Márcio Carvalho, personal trainer de Brasília: treinos personalizados, ajustados toda semana à sua rotina, com acompanhamento de perto para todo o Brasil."
     />
     <meta name="theme-color" content="#07090d" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
-    <meta property="og:title" content="MC Personal Consultoria" />
+    <meta property="og:site_name" content="MC Personal Consultoria" />
+    <meta
+      property="og:title"
+      content="MC Personal Consultoria | Personal trainer online"
+    />
     <meta
       property="og:description"
-      content="Treinos personalizados, acompanhamento de perto e um método direto ao ponto para você conquistar mais saúde, força e performance."
+      content="Consultoria e treino online com Márcio Carvalho, personal trainer de Brasília. Treinos personalizados e acompanhamento de perto para todo o Brasil."
     />
-    <!-- URLs do GitHub Pages: trocar quando o site tiver domínio próprio -->
-    <meta
-      property="og:url"
-      content="https://marcuscvl.github.io/McPersonal-v2/"
-    />
+    <!-- URLs da Vercel: trocar quando o site tiver domínio próprio -->
+    <meta property="og:url" content="https://mcpersonal.vercel.app/" />
     <meta
       property="og:image"
-      content="https://marcuscvl.github.io/McPersonal-v2/assets/og-image.jpg"
+      content="https://mcpersonal.vercel.app/assets/og-image.jpg"
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -31,7 +32,7 @@
       content="Márcio Carvalho, personal trainer, treinando com halteres na academia"
     />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="canonical" href="https://marcuscvl.github.io/McPersonal-v2/" />
+    <link rel="canonical" href="https://mcpersonal.vercel.app/" />
     <link rel="icon" href="assets/favicon.png" />
     <!-- a foto do hero está no CSS e só seria achada depois da cadeia de @import; o preload antecipa -->
     <link
@@ -45,7 +46,74 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="css/style.css" />
-    <title>MC Personal Consultoria | Márcio Carvalho</title>
+    <title>
+      Personal Trainer Online | MC Personal Consultoria - Márcio Carvalho
+    </title>
+    <!-- dados estruturados: dizem ao Google que é um serviço de personal trainer online, sediado em Brasília -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "MC Personal Consultoria",
+        "description": "Consultoria e treino online com personal trainer: treinos personalizados, ajustados toda semana à rotina do aluno, com acompanhamento de perto.",
+        "url": "https://mcpersonal.vercel.app/",
+        "image": "https://mcpersonal.vercel.app/assets/og-image.jpg",
+        "logo": "https://mcpersonal.vercel.app/assets/logo.webp",
+        "telephone": "+55 61 8148-2244",
+        "email": "mcpersonalconsultoria@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Brasília",
+          "addressRegion": "DF",
+          "addressCountry": "BR"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "Brasil"
+        },
+        "sameAs": ["https://www.instagram.com/mcpersonalconsultoria/"],
+        "founder": {
+          "@type": "Person",
+          "name": "Márcio Carvalho",
+          "jobTitle": "Personal Trainer",
+          "description": "Bacharel em Educação Física, Pós-Graduado em Medicina do Esporte e Atividade Física, Especialista em Treinamento Funcional para Saúde e Condicionamento e Pós-Graduado em Alta Performance em Prescrição de Treinos e Exercícios."
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Serviços",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Treino online para hipertrofia"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Treino online para emagrecimento"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Condicionamento físico"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Saúde e qualidade de vida"
+              }
+            }
+          ]
+        }
+      }
+    </script>
   </head>
   <body>
     <!-- ícones reaproveitados na página com <use href="#icon-..." /> -->
@@ -894,7 +962,7 @@
                   <use href="#icon-pin" />
                 </svg>
                 <p class="cta-final-cards-item-text">
-                  Treinos presenciais e online
+                  Consultoria online para todo o Brasil
                 </p>
               </div>
             </div>
