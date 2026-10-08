@@ -1,0 +1,96 @@
+/*==========mobile==========*/
+/* página de endereço inexistente (404.html): ocupa a tela toda, com o Márcio de costas ao fundo */
+.not-found {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 3rem 1rem;
+  background-color: var(--background-color);
+  background-image:
+    linear-gradient(
+      180deg,
+      var(--overlay-medium-color),
+      var(--overlay-color)
+    ),
+    url("../assets/bg-cta.webp");
+  background-position: 80% center;
+  background-size: cover;
+}
+.not-found-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 100%;
+  max-width: var(--container-width);
+  margin-inline: auto;
+}
+/* o link do logo ocupa só o tamanho da imagem, não a largura toda */
+.not-found-logo {
+  display: flex;
+  align-self: flex-start;
+}
+.not-found-img {
+  width: 180px;
+  height: auto;
+}
+.not-found-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+  max-width: 520px;
+}
+/* número grande só com o contorno, para não brigar com o título */
+.not-found-number {
+  font-family: var(--ftitle);
+  font-size: var(--fs-xg);
+  font-weight: var(--title-weight);
+  color: transparent;
+  line-height: 1;
+  -webkit-text-stroke: 2px var(--primary-color);
+}
+.not-found-text {
+  font-size: var(--fs-base);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+.not-found-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: var(--fs-detail);
+  color: var(--title-color);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  transition: all 0.3s;
+}
+.not-found-link:hover {
+  color: var(--primary-color);
+}
+.not-found-link-img {
+  width: 20px;
+  height: 20px;
+  color: var(--whatsapp-color);
+}
+/*==========tablet==========*/
+/* a partir do tablet o Márcio fica à direita e o texto ocupa o lado escuro */
+@media screen and (min-width: 768px) {
+  .not-found {
+    padding: 4rem 2rem;
+    background-image:
+      linear-gradient(
+        90deg,
+        var(--overlay-color) 35%,
+        var(--overlay-light-color)
+      ),
+      url("../assets/bg-cta.webp");
+    background-position: right center;
+  }
+  .not-found-img {
+    width: 220px;
+  }
+  .not-found-number {
+    font-size: calc(var(--fs-xg) * 1.6);
+  }
+}

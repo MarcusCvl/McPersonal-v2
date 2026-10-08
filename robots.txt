@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mcpersonal.vercel.app/sitemap.xml
+Sitemap: https://mcpersonalconsultoria.com.br/sitemap.xml
