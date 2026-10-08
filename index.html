@@ -45,6 +45,14 @@
     <!-- abre a conexão com o Google Fonts antes de o global.css pedir as fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- o style.css chama o global.css, que chama as fontes: o preload baixa os dois junto com o style.css
+         em vez de esperar a fila de @import (o endereço das fontes precisa ser igual ao do global.css) -->
+    <link rel="preload" href="css/global.css" as="style" />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Work+Sans:wght@300;400;500;600&display=swap"
+      as="style"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <title>
       Personal Trainer Online | MC Personal Consultoria - Márcio Carvalho
