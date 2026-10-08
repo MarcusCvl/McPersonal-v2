@@ -3,7 +3,8 @@ const botaoEnviar = form.querySelector(".form-button");
 const statusEnvio = form.querySelector(".form-status");
 
 // URL do app da web do Apps Script (Implantar > Nova implantação > App da Web)
-const SCRIPT_URL = "COLE_AQUI_A_URL_DO_APPS_SCRIPT";
+const SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbykrspsicGkjYUWm0X9y3UIMHnN9ES7yifg_Gi8aOlp-mLfqMuU_pyfXk6LZk0lLq4iiw/exec";
 
 form.addEventListener("submit", async function (event) {
   event.preventDefault();
